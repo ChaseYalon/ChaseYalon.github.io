@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+
+<body>
+    <h1>Welcome to My Blog</h1>
+    <div id="blogContainer"></div>
+
+    <script>
+        function fetchJSONData() {
+            fetch("./quotes.json")
+                .then((res) => {
+                    if (!res.ok) {
+                        throw new Error(`HTTP error! Status: ${res.status}`);
+                    }
+                    return res.json();
+                })
+                .then((data) => {
+                    const blogContainer = document.getElementById("blogContainer");
+                    Object.values(data.quotes).forEach((quote) => {
+                        const blogEntry = document.createElement("div");
+                        blogEntry.className = "blogEntry";
+                        
+                        blogEntry.innerHTML = `
+                            <div class="blogHeader">${quote.header}</div>
+                            <div class="blogDate">${quote.date}</div>
+                            <div class="blogText">${quote.text}</div>
+                        `;
+                        blogContainer.appendChild(blogEntry);
+                    });
+                })
+                .catch((error) => console.error("Unable to fetch data:", error));
+        }
+
+        fetchJSONData();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+{
+    "quotes":{
+        "1":{        
+        "header":"START",
+        "date":"10/30/24",
+        "text":"Today I started making the blog, right now it is just a static github pages site but I have bigger ambitions"
+        },
+        "2":{
+            "header":"Json parsing",
+            "date":"10/30/24",
+            "text":"Now I am posts in JSON"    
+        }
+    }
+
+
+}
