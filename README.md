@@ -1,2 +1,3 @@
 # ChaseYalon.github.io
-my github pages blog
+
+Hi I am Chase Yalon, this is my blog
